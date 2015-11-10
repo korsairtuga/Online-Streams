@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		B3ECC4861BF10066002F7C14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ECC4851BF10066002F7C14 /* AppDelegate.swift */; };
 		B3ECC4881BF10066002F7C14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ECC4871BF10066002F7C14 /* ViewController.swift */; };
-		B3ECC48B1BF10066002F7C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3ECC4891BF10066002F7C14 /* Main.storyboard */; };
 		B3ECC48D1BF10066002F7C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3ECC48C1BF10066002F7C14 /* Assets.xcassets */; };
+		B3ECC4951BF10087002F7C14 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ECC4941BF10087002F7C14 /* StreamViewController.swift */; };
+		B3ECC4971BF1048B002F7C14 /* StreamTableViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ECC4961BF1048B002F7C14 /* StreamTableViewCellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B3ECC4821BF10066002F7C14 /* Online Streams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Online Streams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ECC4851BF10066002F7C14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3ECC4871BF10066002F7C14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B3ECC48A1BF10066002F7C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3ECC48C1BF10066002F7C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3ECC48E1BF10066002F7C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3ECC4941BF10087002F7C14 /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamViewController.swift; path = Streaming/StreamViewController.swift; sourceTree = "<group>"; };
+		B3ECC4961BF1048B002F7C14 /* StreamTableViewCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamTableViewCellData.swift; path = Streaming/StreamTableViewCellData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +56,10 @@
 			children = (
 				B3ECC4851BF10066002F7C14 /* AppDelegate.swift */,
 				B3ECC4871BF10066002F7C14 /* ViewController.swift */,
-				B3ECC4891BF10066002F7C14 /* Main.storyboard */,
 				B3ECC48C1BF10066002F7C14 /* Assets.xcassets */,
 				B3ECC48E1BF10066002F7C14 /* Info.plist */,
+				B3ECC4941BF10087002F7C14 /* StreamViewController.swift */,
+				B3ECC4961BF1048B002F7C14 /* StreamTableViewCellData.swift */,
 			);
 			path = "Online Streams";
 			sourceTree = "<group>";
@@ -120,7 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ECC48D1BF10066002F7C14 /* Assets.xcassets in Resources */,
-				B3ECC48B1BF10066002F7C14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,22 +134,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ECC4881BF10066002F7C14 /* ViewController.swift in Sources */,
+				B3ECC4971BF1048B002F7C14 /* StreamTableViewCellData.swift in Sources */,
 				B3ECC4861BF10066002F7C14 /* AppDelegate.swift in Sources */,
+				B3ECC4951BF10087002F7C14 /* StreamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B3ECC4891BF10066002F7C14 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3ECC48A1BF10066002F7C14 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B3ECC48F1BF10066002F7C14 /* Debug */ = {

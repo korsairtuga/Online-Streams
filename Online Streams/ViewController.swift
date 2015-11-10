@@ -8,18 +8,39 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+
+    var streams: Array<StreamTableViewCellData> = [
+        StreamTableViewCellData(streamURL: NSURL(string: "http://whdh.mpl.miisolutions.net:1935/whdh-live01/_definst_/mp4:whdh_1/playlist.m3u8")!, streamTitle: "Boston WHDH (channel 7 news"),
+        StreamTableViewCellData(streamURL: NSURL(string: "http://nasatv-lh.akamaihd.net/i/NASA_101@319270/master.m3u8")!, streamTitle: "NASA"),
+        StreamTableViewCellData(streamURL: NSURL(string: "http://btvasia-i.akamaihd.net/hls/live/203322/btvasia_ios/P1/M24K.m3u8")!, streamTitle: "Bloomberg Stream")
+
+    ]
 
     override func viewDidLoad() {
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let streamData = self.streams[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        cell.textLabel?.text = streamData.streamTitle
+        return cell
     }
 
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.streams.count
+    }
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let streamData = self.streams[indexPath.row]
+        self.navigationController?.pushViewController(StreamViewController(streamURL: streamData.streamURL), animated: true)
+    }
 
 }
 
