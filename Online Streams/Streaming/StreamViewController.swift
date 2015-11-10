@@ -11,19 +11,45 @@ import UIKit
 
 class StreamViewController: UIViewController {
 
-    var streamURL: NSURL!;
+    var avPlayer: AVPlayer?
+    var avPlayerLayer: AVPlayerLayer?
 
-    convenience required init(streamURL: NSURL) {
-        self.init(nibName: nil, bundle: nil)
-        self.streamURL = streamURL
+    var detailItem: NSURL? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let avPlayer = AVPlayer(URL: self.streamURL)
-        let avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.frame = self.view.bounds
-        self.view.layer.addSublayer(avPlayerLayer)
-        avPlayer.play()
+    func configureView() {
+        // Update the user interface for the detail item.
+        if let detail = self.detailItem {
+            if let player: AVPlayer = self.avPlayer {
+                player.pause()
+                self.avPlayer = nil
+                self.avPlayerLayer!.removeFromSuperlayer()
+            }
+            self.avPlayer = AVPlayer(URL: detail)
+            self.avPlayerLayer = AVPlayerLayer(player: avPlayer)
+            self.avPlayerLayer!.frame = self.view.bounds
+            self.view.layer.addSublayer(avPlayerLayer!)
+        }
     }
+
+    func stop() {
+        if let player = self.avPlayer {
+            player.pause()
+        }
+    }
+
+    func start() {
+        if let player = self.avPlayer {
+            player.play()
+        }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        self.stop()
+    }
+
 }
