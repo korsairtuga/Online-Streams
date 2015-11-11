@@ -1,0 +1,34 @@
+[
+    {
+    "url": "http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200",
+    "title": "ABC"
+    },
+    {
+    "url": "http://c004.p105.edgesuite.net/i/c004/bbcworld_1@97498/master.m3u8",
+    "title": "BBC World News"
+    },
+    {
+    "url": "http://whdh.mpl.miisolutions.net:1935/whdh-live01/_definst_/mp4:whdh_1/playlist.m3u8",
+    "title": "Boston WHDH (channel 7 news)"
+    },
+    {
+    "url": "http://btvasia-i.akamaihd.net/hls/live/203322/btvasia_ios/P1/M24K.m3u8",
+    "title": "Bloomberg"
+    },
+    {
+    "url": "http://origin2.live.web.tv.streamprovider.net/streams/877ba7a57aa68fd898b838f58d51a69f/index.m3u8",
+    "title": "CCTV"
+    },
+    {
+    "url": "http://origin2.live.web.tv.streamprovider.net/streams/3bc166ba3776c04e987eb242710e75c0/index.m3u8",
+    "title": "CNBC"
+    },
+    {
+    "url": "http://nasatv-lh.akamaihd.net/i/NASA_101@319270/master.m3u8",
+    "title": "NASA"
+    },
+    {
+    "url": "http://37.58.85.156/rlo001/ngrp:rlo001.stream_all/playlist.m3u8",
+    "title": "Reuters"
+    }
+]

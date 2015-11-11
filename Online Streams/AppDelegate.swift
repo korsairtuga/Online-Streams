@@ -14,21 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
         let splitViewController = UISplitViewController(nibName: nil, bundle: nil)
         let streamViewController = StreamViewController()
         streamViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-//        streamViewController.navigationItem.leftItemsSupplementBackButton = true
-        splitViewController.viewControllers = [ViewController(style: .Grouped), streamViewController]
+
+        splitViewController.viewControllers = [ChannelViewController(style: .Grouped), streamViewController]
         splitViewController.delegate = self
 
         self.window?.rootViewController = splitViewController
         self.window?.makeKeyAndVisible()
         return true
     }
-
 
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
